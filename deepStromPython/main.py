@@ -1,9 +1,11 @@
 import argparse
 import numpy as np
 import csv
+import random
 from dataimport import readStackFromTiff
 from MatlabFunctions import matlab_style_gauss2D
 from MatlabFunctions import conv2
+from MatlabFunctions import ind2sub
 
 
 def main():
@@ -18,6 +20,8 @@ def main():
     args = parser.parse_args()
     # number of patches to extract from each image
     numPatches = 500
+    # training patch-size: needs to be dividable by 8 with no residual
+    patchSize = args.upSamplingFactor * args.patchBeforeUpSample;
     # maximal number of training examples
     maxExamples = 10000
     # minimal number of emitters in each patch to avoid empty examples in case  of low-density conditions
@@ -39,9 +43,9 @@ def main():
     trainingExemplesNum = min(numImages * numPatches, maxExamples)
 
     # initialize the training patches and labels
-    patches = np.zeros((highResHeight, highResWidth, trainingExemplesNum))
-    heatmaps = np.zeros((highResHeight, highResWidth, trainingExemplesNum))
-    spikes = np.zeros((highResHeight, highResWidth, trainingExemplesNum))
+    patches = []
+    heatmaps = []
+    spikes = []
 
     csvFile = open(args.Directory + "\\" + args.csvFileName)
     csvData = list(csv.reader(csvFile))
@@ -59,7 +63,7 @@ def main():
         frameData = []
         xLocations = []
         yLocations = []
-        while (csvData[0][1] == idx + 1):
+        while (len(csvData) != 0 and csvData[0][1] == idx + 1):
             row = csvData.pop(0)
             frameData.append(row)
 
@@ -73,8 +77,26 @@ def main():
         # get the labels per frame in spikes and heatmaps
         heatMapImage = conv2(spikeImage, psfHeatmap, 'same')
 
-        #choose randomly patch centers to take as training examples
+        # choose randomly patch centers to take as training examples
+        linearIndices = range((highResHeight - patchSize) * (highResWidth - patchSize))  # need to add patchSize/2,
+        # to each indices to make sure none of the patches is out of boundry.
+        linearIndices = random.sample(linearIndices, 500)
 
+        skipCounter = 0
+        for lIndex in linearIndices:
+            index = ind2sub(highResHeight - patchSize, lIndex)
+            numEmmiters = np.count_nonzero(
+                spikeImage[index[0]:(index[0] + patchSize + 1), index[1]:(index[1] + patchSize + 1)])
+            if (numEmmiters < minEmitters):
+                skipCounter += 1
+            else:
+                patches.append(image[index[0]:(index[0] + patchSize + 1), index[1]:(index[1] + patchSize + 1)])
+                spikes.append(spikeImage[index[0]:(index[0] + patchSize + 1), index[1]:(index[1] + patchSize + 1)])
+                heatmaps.append(heatMapImage[index[0]:(index[0] + patchSize + 1), index[1]:(index[1] + patchSize + 1)])
+                exampleCounter+=1
+
+        if (exampleCounter>maxExamples):
+            break
 
     return
 

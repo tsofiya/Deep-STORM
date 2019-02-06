@@ -1,7 +1,6 @@
-from MatlabFunctions import conv2
+import numpy as np
 
-a = [[1, 2, 3], [4, 5, 6]]
-b = [[7, 8, 9, ], [10, 11, 12]]
-print(conv2(a, b, 'same'))
-c= [[6, 5], [4, 3]]
-print(conv2(a, c, 'same'))
+matrix = np.arange(20).reshape((5, 4))
+print(matrix)
+print()
+print(matrix[2:5, 2:4])
