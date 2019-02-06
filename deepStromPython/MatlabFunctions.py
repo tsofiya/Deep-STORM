@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.signal import convolve2d
 
 
 def matlab_style_gauss2D(shape=(3, 3), sigma=0.5):
@@ -15,6 +16,11 @@ def matlab_style_gauss2D(shape=(3, 3), sigma=0.5):
         h /= sumh
     psfHeatmap = np.mat(h)
     return psfHeatmap
+
+
+
+def conv2(x, y, mode='same'):
+    return np.rot90(convolve2d(np.rot90(x, 2), np.rot90(y, 2), mode=mode), 2)
 
 
 if __name__ == '__main__':

@@ -1,9 +1,9 @@
 import argparse
-from dataimport import readStackFromTiff
-from MatlabFunctions import matlab_style_gauss2D
 import numpy as np
 import csv
-from scipy.misc import imresize
+from dataimport import readStackFromTiff
+from MatlabFunctions import matlab_style_gauss2D
+from MatlabFunctions import conv2
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
     # dimensions of the high-res grid
     highResHeight = args.upSamplingFactor * orgHeight
     highResWidth = args.upSamplingFactor * orgWidth
-    ratio= args.cameraPixelSize/args.upSamplingFactor
+    ratio = args.cameraPixelSize / args.upSamplingFactor
 
     # heatmap psf
     psfHeatmap = matlab_style_gauss2D([7, 7], 1)
@@ -51,20 +51,30 @@ def main():
         raise NameError('csv file should hava all 8 columns')
     csvData = [[float(y) for y in x] for x in csvData]
 
+    exampleCounter = 0
     for idx, image in enumerate(matList):
         # upsample the frame by the upsampling_factor using a nearest neighbor
         resize = np.ones([args.upSamplingFactor, args.upSamplingFactor])
         resize = np.kron(image, resize)
         frameData = []
         xLocations = []
-        yLocation = []
+        yLocations = []
         while (csvData[0][1] == idx + 1):
             row = csvData.pop(0)
             frameData.append(row)
 
             # get the approximated locations according to the high-res grid pixel size
-            xLocations = max(min(round(row[3] / ratio), highResHeight-1), 0)
-            yLocations = max(min(round(row[4] / ratio), highResWidth-1), 0)
+            xLocations.append(max(min(round(row[2] / ratio), highResHeight - 1), 0))
+            yLocations.append(max((min(round(row[3] / ratio), highResWidth - 1), 0)))
+            spikeImage = np.zeros((highResHeight, highResWidth))
+        for i in range(len(xLocations)):
+            spikeImage[yLocations[i], xLocations[i]] = 1
+
+        # get the labels per frame in spikes and heatmaps
+        heatMapImage = conv2(spikeImage, psfHeatmap, 'same')
+
+        #choose randomly patch centers to take as training examples
+
 
     return
 
