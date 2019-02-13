@@ -2,13 +2,17 @@ import argparse
 import numpy as np
 import csv
 import random
+import time
+import matplotlib.pyplot as plt
+plt.ion()
 from dataimport import readStackFromTiff
 from MatlabFunctions import matlab_style_gauss2D
 from MatlabFunctions import conv2
 from MatlabFunctions import ind2sub
 
 
-def main():
+
+def CreateData():
     parser = argparse.ArgumentParser()
     parser.add_argument("cameraPixelSize", type=int, help="Camera pixel size in [nm]")
     parser.add_argument("Directory", type=str, help="Files directoy")
@@ -21,7 +25,7 @@ def main():
     # number of patches to extract from each image
     numPatches = 500
     # training patch-size: needs to be dividable by 8 with no residual
-    patchSize = args.upSamplingFactor * args.patchBeforeUpSample;
+    patchSize = args.upSamplingFactor * args.patchBeforeUpSample
     # maximal number of training examples
     maxExamples = 10000
     # minimal number of emitters in each patch to avoid empty examples in case  of low-density conditions
@@ -56,6 +60,8 @@ def main():
     csvData = [[float(y) for y in x] for x in csvData]
 
     exampleCounter = 0
+    f, (lowRes, Heatmap) = plt.subplots(1, 2, sharey=True)
+
     for idx, image in enumerate(matList):
         # upsample the frame by the upsampling_factor using a nearest neighbor
         resize = np.ones([args.upSamplingFactor, args.upSamplingFactor])
@@ -95,11 +101,17 @@ def main():
                 heatmaps.append(heatMapImage[index[0]:(index[0] + patchSize + 1), index[1]:(index[1] + patchSize + 1)])
                 exampleCounter+=1
 
+        lowRes.imshow(resize, cmap='gray')
+        scat = lowRes.scatter(xLocations, yLocations, c='r', marker='+')
+        Heatmap.imshow(heatMapImage, cmap='gray')
+
+        plt.pause(0.1)
+        scat.remove()
         if (exampleCounter>maxExamples):
             break
 
-    return
+    return patches, spikes, heatmaps
 
 
 if __name__ == "__main__":
-    main()
+    patches, spikes, heatmaps= CreateData()
