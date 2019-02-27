@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e1a4970-4b8e-4ab8-b77d-686f3f9be659" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CNN_Model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Training.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN_Model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Training.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepStorm2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="2e1a4970-4b8e-4ab8-b77d-686f3f9be659" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="357">
               <caret line="21" column="22" selection-start-line="21" selection-end-line="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -52,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="399">
               <caret line="27" column="37" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -64,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataimport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="105">
               <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
                 <element signature="e#34#52#0" expanded="true" />
@@ -81,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MatlabFunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
+            <state relative-caret-position="315">
               <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -90,41 +80,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Training.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="95" column="63" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="63" />
+            <state relative-caret-position="378">
+              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
               <folding>
                 <element signature="e#185#199#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TrainingNOSaving.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="133" column="57" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/sklearn/utils/validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="259" selection-start-line="259" selection-end-line="259" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CNN_Model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2394">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
         </entry>
@@ -146,6 +109,8 @@
       <find>heatmaps</find>
       <find>RGS</find>
       <find>1</find>
+      <find>input</find>
+      <find>bu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,16 +123,16 @@
         <option value="$PROJECT_DIR$/tester.py" />
         <option value="$PROJECT_DIR$/MatlabFunctions.py" />
         <option value="$PROJECT_DIR$/CNN_Model.py" />
-        <option value="$PROJECT_DIR$/Training.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/createdata.py" />
         <option value="$PROJECT_DIR$/TrainingNOSaving" />
         <option value="$PROJECT_DIR$/TrainingNOSaving.py" />
+        <option value="$PROJECT_DIR$/Training.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-49" />
+    <option name="x" value="-50" />
     <option name="y" value="-10" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
@@ -198,6 +163,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -332,24 +298,37 @@
       <option name="presentableId" value="Default" />
       <updated>1549370498869</updated>
       <workItem from="1550402684303" duration="2366000" />
-      <workItem from="1550405190405" duration="9381000" />
+      <workItem from="1550405190405" duration="9670000" />
+      <workItem from="1551101825379" duration="783000" />
+      <workItem from="1551105761666" duration="722000" />
+      <workItem from="1551250858582" duration="755000" />
+      <workItem from="1551251689304" duration="18000" />
+      <workItem from="1551255822181" duration="1657000" />
     </task>
+    <task id="LOCAL-00001" summary="seperated main file from functionallity&#10;added training file without saving(will be removed, just for google colab)">
+      <created>1550420046478</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550420046478</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11747000" />
+    <option name="totallyTimeSpent" value="15971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18993288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" visible="true" weight="0.33002833" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.33002833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -379,6 +358,10 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="seperated main file from functionallity&#10;added training file without saving(will be removed, just for google colab)" />
+    <option name="LAST_COMMIT_MESSAGE" value="seperated main file from functionallity&#10;added training file without saving(will be removed, just for google colab)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,30 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNN_Model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="259" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MatlabFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -608,9 +567,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TrainingNOSaving" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5082">
+          <caret line="259" selection-start-line="259" selection-end-line="259" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN_Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrainingNOSaving.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="131" column="11" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="22" selection-start-line="21" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dataimport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="105">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding>
             <element signature="e#34#52#0" expanded="true" />
@@ -621,47 +622,23 @@
     <entry file="file://$PROJECT_DIR$/positions_demo1.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/createdata.py">
+    <entry file="file://$PROJECT_DIR$/MatlabFunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="37" />
+        <state relative-caret-position="315">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="22" selection-start-line="21" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrainingNOSaving">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Training.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="95" column="63" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="63" />
+        <state relative-caret-position="378">
+          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
           <folding>
             <element signature="e#185#199#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrainingNOSaving.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="133" column="57" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
         </state>
       </provider>
     </entry>

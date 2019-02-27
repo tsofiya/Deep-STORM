@@ -107,7 +107,7 @@ def train_model(patches, heatmaps, weights_name, meanstd_name):
     change_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=0.00005)
 
     # Model building and complitation
-    model = buildModel((psize, psize, 1))
+    model = buildModel((None, None, 1))
 
     # Create an image data generator for real time data augmentation
     datagen = ImageDataGenerator(
@@ -156,15 +156,19 @@ def train_model(patches, heatmaps, weights_name, meanstd_name):
     plt.title("Loss function progress during training")
     plt.show()
 
-    # Save datasets to a matfile to open later in matlab
+    # # Save datasets to a matfile to open later in matlab
     mdict = {"mean_test": mean_val_test, "std_test": std_val_test}
-    sio.savemat(meanstd_name, mdict)
+    with open('mean_std.csv', 'w', newline='') as f:  # Just use 'w' mode in 3.x
+        for key in mdict.keys():
+            f.write(key)
+            f.write(",")
+        f.write("\n")
+        for val in mdict.values():
+            f.write(str(val))
+            f.write(",")
 
-    # moving data into a zip file.
-    zipFile = zipfile.ZipFile("neuralNetWork.zip", "w")
-    zipFile.write(weights_name)
-    zipFile.write(meanstd_name)
-    zipFile.close()
+    # save the model
+    model.save('Deep-STORM-trained-model.h5')
 
     return
 
