@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e1a4970-4b8e-4ab8-b77d-686f3f9be659" name="Default Changelist" comment="" />
+    <list default="true" id="2e1a4970-4b8e-4ab8-b77d-686f3f9be659" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DeepStorm1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DeepStorm1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/deepStromPython$main.coverage" NAME="main Coverage Results" MODIFIED="1550412646371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/deepStromPython$main.coverage" NAME="main Coverage Results" MODIFIED="1551382430652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -30,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="22" selection-start-line="21" selection-end-line="22" />
+            <state relative-caret-position="243">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -40,39 +46,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Miniconda3/envs/tensorflow_gpu/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataimport.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding>
-                <element signature="e#34#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/positions_demo1.csv">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MatlabFunctions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="-1830">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -83,11 +69,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Training.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+            <state relative-caret-position="1581">
+              <caret line="80" column="52" lean-forward="true" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
               <folding>
                 <element signature="e#185#199#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Miniconda3/envs/tensorflow_gpu/Lib/site-packages/numpy/matrixlib/defmatrix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="635">
+              <caret line="1115" column="7" selection-start-line="1115" selection-start-column="7" selection-end-line="1115" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -123,11 +118,11 @@
         <option value="$PROJECT_DIR$/tester.py" />
         <option value="$PROJECT_DIR$/MatlabFunctions.py" />
         <option value="$PROJECT_DIR$/CNN_Model.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/createdata.py" />
         <option value="$PROJECT_DIR$/TrainingNOSaving" />
         <option value="$PROJECT_DIR$/TrainingNOSaving.py" />
         <option value="$PROJECT_DIR$/Training.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -143,7 +138,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,20 +145,17 @@
               <item name="deepStromPython" type="b2602c69:ProjectViewProjectNode" />
               <item name="deepStromPython" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="deepStromPython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -191,7 +182,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="SDK_HOME" value="D:\Miniconda3\envs\tensorflow_gpu\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -304,6 +295,7 @@
       <workItem from="1551250858582" duration="755000" />
       <workItem from="1551251689304" duration="18000" />
       <workItem from="1551255822181" duration="1657000" />
+      <workItem from="1551378900335" duration="3891000" />
     </task>
     <task id="LOCAL-00001" summary="seperated main file from functionallity&#10;added training file without saving(will be removed, just for google colab)">
       <created>1550420046478</created>
@@ -316,19 +308,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15971000" />
+    <option name="totallyTimeSpent" value="19862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.33002833" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" visible="true" weight="0.5410765" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -367,14 +359,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createdata.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/Training.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -393,6 +380,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>patches.shape</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>index[0]</expression-string>
         <language-id>Python</language-id>
@@ -437,70 +429,16 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/scipy/misc/pilutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="326" selection-start-line="326" selection-end-line="326" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/lib/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pyparsing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/matrixlib/defmatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5103">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/lib/index_tricks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3969">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/scipy/misc/pilutil.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/lib/utils.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/pyparsing.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/matrixlib/defmatrix.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/lib/index_tricks.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-313451744/builtins.py" />
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/manage_plugins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5751">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="52" selection-start-line="52" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/_plugins/tifffile_plugin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/manage_plugins.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/_io.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/io/_plugins/tifffile_plugin.py" />
     <entry file="file://$PROJECT_DIR$/testStack_SimulatedMicrotubules.tif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -511,13 +449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/keras/backend/tensorflow_backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/keras/backend/tensorflow_backend.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_import_hook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -525,13 +457,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="391" column="8" selection-start-line="391" selection-start-column="8" selection-end-line="391" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/keras/callbacks.py" />
     <entry file="file://$PROJECT_DIR$/tester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -539,42 +465,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/util/arraycrop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/util/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="166" selection-start-line="166" selection-end-line="166" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="1134" selection-start-line="1134" selection-end-line="1134" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/util/arraycrop.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/util/__init__.py" />
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/skimage/__init__.py" />
     <entry file="file://$PROJECT_DIR$/TrainingNOSaving" />
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5082">
-          <caret line="259" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/sklearn/utils/validation.py" />
     <entry file="file://$PROJECT_DIR$/CNN_Model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2394">
@@ -589,29 +484,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" selection-start-line="21" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createdata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataimport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="120">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding>
             <element signature="e#34#52#0" expanded="true" />
@@ -632,10 +507,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="1688" selection-start-line="1688" selection-end-line="1688" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Miniconda3/envs/tensorflow_gpu/Lib/site-packages/numpy/matrixlib/defmatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="1115" column="7" selection-start-line="1115" selection-start-column="7" selection-end-line="1115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Miniconda3/envs/tensorflow_gpu/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1830">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Training.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="1581">
+          <caret line="80" column="52" lean-forward="true" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
           <folding>
             <element signature="e#185#199#0" expanded="true" />
           </folding>
