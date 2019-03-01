@@ -11,9 +11,13 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 import au.com.bytecode.opencsv.CSVReader;
 import org.ejml.simple.SimpleMatrix;
+import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.cpu.nativecpu.NDArray;
+import org.nd4j.linalg.factory.Nd4j;
 
 public class Utilities {
 
@@ -30,7 +34,8 @@ public class Utilities {
             frames[i] = reader.read(i);
         }
 
-        //Convert frmaes to openCV matrix
+
+        //Convert frmaes to simple matrix
         int imageNum = reader.getNumImages(true);
 
         ArrayList<SimpleMatrix> matrices = new ArrayList<SimpleMatrix>();
@@ -40,7 +45,6 @@ public class Utilities {
         }
 
         rescaleImages(matrices, 8);
-
         return matrices;
 
     }
@@ -127,6 +131,21 @@ public class Utilities {
         values[0]= Double.parseDouble(stringValues[0]);
         values[1]= Double.parseDouble(stringValues[1]);
         return values;
+    }
+
+    public static INDArray createModelData(List<SimpleMatrix> mats){
+        SimpleMatrix mat= mats.get(0);
+        INDArray arr= simpleMatrixToNDArray(mat);
+        for (int i=1; i< mats.size(); i++){
+            arr = Nd4j.concat(0, arr,simpleMatrixToNDArray(mats.get(i)));
+        }
+
+        return arr;
+    }
+
+    private static NDArray simpleMatrixToNDArray(SimpleMatrix mat){
+        long[] shape= {1, mat.numCols(),mat.numRows()};
+        return new NDArray(mat.getMatrix().data, shape,0, 'C');
     }
 
 
