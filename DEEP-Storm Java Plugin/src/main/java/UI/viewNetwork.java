@@ -18,7 +18,7 @@ public class viewNetwork extends JFrame {
 
     public viewNetwork() {
         setTitle("Net Settings");
-        setSize(400, 500);
+        setSize(300, 300);
         add(rootPanel);
 
 

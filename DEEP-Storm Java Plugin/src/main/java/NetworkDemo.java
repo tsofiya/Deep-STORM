@@ -5,11 +5,22 @@
  * See the CC0 1.0 Universal license for details:
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
-
+import javax.imageio.*;
 import UI.viewNetwork;
+import com.twelvemonkeys.imageio.metadata.exif.TIFF;
+import ij.ImagePlus;
+import net.imagej.Data;
 import net.imagej.Dataset;
 import net.imagej.ImageJ;
+import java.io.*;
+import java.lang.reflect.Array;
+import java.nio.Buffer;
+import java.util.List;
+import java.util.ArrayList;
 
+import net.imagej.ImgPlus;
+import net.imglib2.type.numeric.integer.UnsignedByteType;
+import org.deeplearning4j.nn.api.Model;
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.ejml.simple.SimpleMatrix;
@@ -21,10 +32,18 @@ import org.scijava.plugin.Plugin;
 import org.springframework.core.io.ClassPathResource;
 
 
+import javax.imageio.IIOImage;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageWriteParam;
+import javax.imageio.ImageWriter;
+import javax.imageio.stream.ImageOutputStream;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.opencsv.CSVReader;
+
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -58,6 +77,9 @@ public class NetworkDemo implements Command, ActionListener {
     @Parameter(type = ItemIO.INPUT)
     private Dataset input;
 
+    @Parameter(type = ItemIO.OUTPUT)
+    private Dataset output;
+
     private viewNetwork viewNetwork = new viewNetwork();
 
 
@@ -83,7 +105,6 @@ public class NetworkDemo implements Command, ActionListener {
         }
 
         viewNetwork.setVisible(false);
-
         MultiLayerNetwork model;
         try {
             //opening the saved model.
@@ -128,9 +149,48 @@ public class NetworkDemo implements Command, ActionListener {
             return;
         }
 
+        images= Utilities.projectImageBetween0and1(images);
+        images= Utilities.normalizeImage(images,meanStd[0], meanStd[1]);
+
         INDArray modelData= Utilities.createModelData(images);
         int [] prediction= model.predict(modelData);
 
+        int height=images.get(0).numRows(), width=images.get(0).numCols();
+        ArrayList<BufferedImage> pImages= Utilities.int2DToImage(prediction,height,width);
+
+        try{
+            Utilities.SaveImagesTiff(pImages, "OutPutTiff.tiff");
+        }
+        catch (Exception exc){
+            System.out.println("Could not save images.");
+        }
+
+        DisplayImage(pImages);
+
+       // output= pImages;
+
+    }
+
+
+
+    private void DisplayImage(ArrayList<BufferedImage> images){
+
+        JLabel jLabel = new JLabel(new ImageIcon(images.get(0)));
+
+        JPanel jPanel = new JPanel();
+        jPanel.add(jLabel);
+        jPanel.setVisible(true);
+        for (int i=1; i<=images.size(); i++){
+            try {
+                Thread.sleep(1000);
+            }
+            catch (Exception e){
+
+            }
+
+            jLabel= new JLabel(new ImageIcon(images.get(i)));
+
+        }
     }
 
     private void popCsvErrorMessage(){

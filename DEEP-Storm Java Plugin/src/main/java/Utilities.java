@@ -1,13 +1,12 @@
 
 
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
+import javax.imageio.*;
 import javax.imageio.stream.ImageInputStream;
+import javax.imageio.stream.ImageOutputStream;
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.awt.image.WritableRaster;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -143,10 +142,47 @@ public class Utilities {
         return arr;
     }
 
+    public static ArrayList<BufferedImage> int2DToImage(int[] array, int height, int width){
+        ArrayList<BufferedImage> images= new ArrayList<BufferedImage>();
+        int span= height*width;
+        if (array.length%span==0){
+            for (int i=0; i<array.length; i+=span) {
+                BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_USHORT_GRAY);
+                WritableRaster raster = image.getRaster();
+                raster.setSamples(0, 0, width, height, i, array);
+                images.add(image);
+            }
+        }
+
+        return images;
+    }
+
     private static NDArray simpleMatrixToNDArray(SimpleMatrix mat){
         long[] shape= {1, mat.numCols(),mat.numRows()};
         return new NDArray(mat.getMatrix().data, shape,0, 'C');
     }
 
+    public static void SaveImagesTiff(ArrayList<BufferedImage> images, String tiffFileName) throws IOException {
+        if (tiffFileName== "" || tiffFileName==null) {
+        tiffFileName = "DeepSTORMed image";
+        }
+            ImageWriter imageWriter = ImageIO
+                    .getImageWritersByFormatName("tiff").next();
+
+
+        ImageOutputStream ios = ImageIO.createImageOutputStream(new File(tiffFileName));
+        imageWriter.setOutput(ios);
+
+        imageWriter.prepareWriteSequence(null);
+        for (BufferedImage image : images) {
+            imageWriter.writeToSequence(new IIOImage(image, null, null), null);
+        }
+        imageWriter.endWriteSequence();
+
+        imageWriter.dispose();
+        ios.flush();
+        ios.close();
+
+    }
 
 }

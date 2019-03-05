@@ -6,10 +6,12 @@
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
 
+import net.imagej.Data;
 import net.imagej.Dataset;
 import net.imagej.DatasetService;
 import net.imagej.ImageJ;
 import net.imagej.axis.Axes;
+import net.imagej.axis.Axis;
 import net.imagej.axis.AxisType;
 import net.imglib2.type.numeric.integer.UnsignedByteType;
 
@@ -17,6 +19,8 @@ import org.scijava.ItemIO;
 import org.scijava.command.Command;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+
+import java.util.ArrayList;
 
 /**
  * A command that generates a diagonal gradient image of user-given size.
@@ -45,6 +49,7 @@ public class GradientImage implements Command {
 	public void run() {
 		// Generate a byte array containing the diagonal gradient.
 		final byte[] data = new byte[width * height];
+
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				final int index = y * width + x;
@@ -52,14 +57,28 @@ public class GradientImage implements Command {
 			}
 		}
 
-		// Create an empty dataset.
-		final String name = "Gradient Image";
-		final long[] dims = { width, height };
-		final AxisType[] axes = { Axes.X, Axes.Y };
-		dataset = datasetService.create(new UnsignedByteType(), dims, name, axes);
+		final byte[] data1 = new byte[width * height];
+		for (int y = 0; y < width; y++) {
+			for (int x = 0; x < height; x++) {
+				final int index = y * height + x;
+				data1[index] = (byte)150;
+			}
+		}
 
+
+		// Create an empty dataset.
+
+		final long[] dims = { width, height};
+		final AxisType[] axes = { Axes.X, Axes.Y};
+		dataset=( datasetService.create(new UnsignedByteType(), dims, "Image1", axes));
+		//dataset.add( datasetService.create(new UnsignedByteType(), dims, "Image2", axes));
+
+
+		byte [] bigData= new byte[2*data.length];
+		System.arraycopy(data,0,bigData,0 ,data.length);
+		System.arraycopy(data1,0,bigData,data.length,data1.length);
 		// Populate the dataset with the gradient data.
-		dataset.setPlane(0, data);
+		dataset.setPlane(0, bigData);
 
 		// NB: Because the dataset is declared as an "OUTPUT" above,
 		// ImageJ automatically takes care of displaying it afterwards!
