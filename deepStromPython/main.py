@@ -18,5 +18,6 @@ if __name__ == "__main__":
 
 
     patches, heatmaps = CreateData(args.cameraPixelSize,args.Directory,args.tifName,args.csvFileName,args.upSamplingFactor,args.patchBeforeUpSample)
-
-    train_model(np.concatenate(patches, axis=0), np.concatenate(heatmaps, axis=0), 'weights', 'meanstd')
+    patches = np.array(patches)
+    heatmaps = np.array(heatmaps)
+    train_model(patches, heatmaps, 'weights', 'meanstd')
