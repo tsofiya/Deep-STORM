@@ -167,8 +167,11 @@ def train_model(patches, heatmaps, weights_name, meanstd_name):
             f.write(str(val))
             f.write(",")
 
-    # save the model
-    model.save('Deep-STORM-trained-model.h5')
+    model_json = model.to_json()  # save just the config. replace with "to_yaml" for YAML serialization
+    with open("deepSTORMmodel_config.json", "w") as f:
+        f.write(model_json)
+
+    model.save_weights('deepStormmodel_weights.h5')  # save just the weights.
 
     return
 
