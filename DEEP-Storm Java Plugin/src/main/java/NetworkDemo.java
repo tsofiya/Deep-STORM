@@ -9,18 +9,17 @@ import javax.imageio.*;
 import UI.viewNetwork;
 import com.twelvemonkeys.imageio.metadata.exif.TIFF;
 import ij.ImagePlus;
-import net.imagej.Data;
-import net.imagej.Dataset;
-import net.imagej.ImageJ;
+import net.imagej.*;
+
 import java.io.*;
 import java.lang.reflect.Array;
 import java.nio.Buffer;
 import java.util.List;
 import java.util.ArrayList;
 
-import net.imagej.ImgPlus;
 import net.imglib2.type.numeric.integer.UnsignedByteType;
 import org.deeplearning4j.nn.api.Model;
+import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.ejml.simple.SimpleMatrix;
@@ -78,7 +77,7 @@ public class NetworkDemo implements Command, ActionListener {
     private Dataset input;
 
     @Parameter(type = ItemIO.OUTPUT)
-    private Dataset output;
+    private ArrayList<BufferedImage> output;
 
     private viewNetwork viewNetwork = new viewNetwork();
 
@@ -86,6 +85,7 @@ public class NetworkDemo implements Command, ActionListener {
     //When an image is loaded, run your network
     @Override
     public void run() {
+        viewNetwork.runMyNetButton.addActionListener(this);
         viewNetwork.setVisible(true);
     }
 
@@ -105,11 +105,12 @@ public class NetworkDemo implements Command, ActionListener {
         }
 
         viewNetwork.setVisible(false);
-        MultiLayerNetwork model;
+        ComputationGraph model;
         try {
             //opening the saved model.
-            String simpleMlp = new ClassPathResource(viewNetwork.getModelPath()).getFile().getPath();
-            model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
+            String path= viewNetwork.getModelPath();
+            //String simpleMlp = new ClassPathResource(path).getFile().getPath();
+            model = KerasModelImport.importKerasModelAndWeights(path);
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, "Something went wrong trying to open your model.\n" +
                             "Are you sure you chose the right file?",
@@ -153,21 +154,21 @@ public class NetworkDemo implements Command, ActionListener {
         images= Utilities.normalizeImage(images,meanStd[0], meanStd[1]);
 
         INDArray modelData= Utilities.createModelData(images);
-        int [] prediction= model.predict(modelData);
+        INDArray[] prediction= model.output(modelData);
 
         int height=images.get(0).numRows(), width=images.get(0).numCols();
-        ArrayList<BufferedImage> pImages= Utilities.int2DToImage(prediction,height,width);
+        ArrayList<BufferedImage> pImages= Utilities.nd4jToImage(prediction);
 
-        try{
-            Utilities.SaveImagesTiff(pImages, "OutPutTiff.tiff");
-        }
-        catch (Exception exc){
-            System.out.println("Could not save images.");
-        }
-
-        DisplayImage(pImages);
-
-       // output= pImages;
+//        try{
+//            Utilities.SaveImagesTiff(pImages, "DeppSTORMedImage.tiff");
+//        }
+//        catch (Exception exc){
+//            System.out.println("Could not save images.");
+//        }
+//
+//        DisplayImage(pImages);
+//
+//       // output= pImages;
 
     }
 

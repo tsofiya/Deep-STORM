@@ -13,7 +13,7 @@ public class viewNetwork extends JFrame {
     private JButton buttonImportCsv;
     private JTextField textFieldModelPath;
     private JButton buttonImortModel;
-    private JButton runMyNetButton;
+    public JButton runMyNetButton;
     private JPanel rootPanel;
 
     public viewNetwork() {

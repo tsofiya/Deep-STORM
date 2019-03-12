@@ -14,6 +14,7 @@ import java.util.List;
 
 import au.com.bytecode.opencsv.CSVReader;
 import org.ejml.simple.SimpleMatrix;
+import org.nd4j.linalg.api.buffer.DataBuffer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.cpu.nativecpu.NDArray;
 import org.nd4j.linalg.factory.Nd4j;
@@ -142,19 +143,25 @@ public class Utilities {
         return arr;
     }
 
-    public static ArrayList<BufferedImage> int2DToImage(int[] array, int height, int width){
+    public static ArrayList<BufferedImage> nd4jToImage(INDArray[] array){
         ArrayList<BufferedImage> images= new ArrayList<BufferedImage>();
-        int span= height*width;
-        if (array.length%span==0){
-            for (int i=0; i<array.length; i+=span) {
-                BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_USHORT_GRAY);
-                WritableRaster raster = image.getRaster();
-                raster.setSamples(0, 0, width, height, i, array);
-                images.add(image);
-            }
+        for (INDArray image:array) {
+            DataBuffer dataBuffer = image.data();
+            int[] intArray = dataBuffer.asInt();
+            images.add(int2DToImage(intArray, image.columns(), image.rows()));
+
         }
 
         return images;
+    }
+
+    public static BufferedImage int2DToImage(int[] array, int height, int width){
+
+                BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_USHORT_GRAY);
+                WritableRaster raster = image.getRaster();
+                raster.setSamples(0, 0, width, height, 0, array);
+                return image;
+
     }
 
     private static NDArray simpleMatrixToNDArray(SimpleMatrix mat){
