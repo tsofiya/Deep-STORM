@@ -5,23 +5,14 @@
  * See the CC0 1.0 Universal license for details:
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
-import javax.imageio.*;
 import UI.viewNetwork;
-import com.twelvemonkeys.imageio.metadata.exif.TIFF;
-import ij.ImagePlus;
 import net.imagej.*;
 
-import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.Buffer;
-import java.util.List;
 import java.util.ArrayList;
 
-import net.imglib2.type.numeric.integer.UnsignedByteType;
-import org.deeplearning4j.nn.api.Model;
+import org.deeplearning4j.nn.conf.ComputationGraphConfiguration;
 import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
-import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.ejml.simple.SimpleMatrix;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.scijava.ItemIO;
@@ -31,23 +22,15 @@ import org.scijava.plugin.Plugin;
 import org.springframework.core.io.ClassPathResource;
 
 
-import javax.imageio.IIOImage;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.stream.ImageOutputStream;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.opencsv.CSVReader;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 /**
  * A very simple plugin.
@@ -98,19 +81,23 @@ public class NetworkDemo implements Command, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (viewNetwork.getModelPath()==null || viewNetwork.getCsvPath()==null){
+        if (viewNetwork.getJSonPath()==null || viewNetwork.getCsvPath()==null){
             JOptionPane.showMessageDialog(null, "Please enter files before pressing run my net button",
                     "warning",JOptionPane.INFORMATION_MESSAGE);
             return;
         }
 
         viewNetwork.setVisible(false);
+        ComputationGraphConfiguration modelConfig;
         ComputationGraph model;
         try {
             //opening the saved model.
-            String path= viewNetwork.getModelPath();
-            //String simpleMlp = new ClassPathResource(path).getFile().getPath();
-            model = KerasModelImport.importKerasModelAndWeights(path);
+            String path= viewNetwork.getJSonPath();
+
+            String modelJson = new ClassPathResource(viewNetwork.getJSonPath()).getFile().getPath();
+            modelConfig = KerasModelImport.importKerasModelConfiguration(modelJson);
+            String modelWeights = new ClassPathResource(viewNetwork.getWeightsPath()).getFile().getPath();
+            model = KerasModelImport.importKerasModelAndWeights(modelJson, modelWeights);
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, "Something went wrong trying to open your model.\n" +
                             "Are you sure you chose the right file?",
@@ -159,16 +146,16 @@ public class NetworkDemo implements Command, ActionListener {
         int height=images.get(0).numRows(), width=images.get(0).numCols();
         ArrayList<BufferedImage> pImages= Utilities.nd4jToImage(prediction);
 
-//        try{
-//            Utilities.SaveImagesTiff(pImages, "DeppSTORMedImage.tiff");
-//        }
-//        catch (Exception exc){
-//            System.out.println("Could not save images.");
-//        }
-//
-//        DisplayImage(pImages);
-//
-//       // output= pImages;
+        try{
+            Utilities.SaveImagesTiff(pImages, "DeppSTORMedImage.tiff");
+        }
+        catch (Exception exc){
+            System.out.println("Could not save images.");
+        }
+
+        DisplayImage(pImages);
+
+       // output= pImages;
 
     }
 

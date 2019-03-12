@@ -1,20 +1,18 @@
 package UI;
 
-import com.opencsv.bean.CsvToBeanFilter;
-
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 public class viewNetwork extends JFrame {
     private JTextField textFieldCsvPath;
     private JButton buttonImportCsv;
-    private JTextField textFieldModelPath;
-    private JButton buttonImortModel;
+    private JTextField textFieldJasonPath;
+    private JButton buttonImortJason;
     public JButton runMyNetButton;
     private JPanel rootPanel;
+    private JTextField textFieldLoadWeights;
+    private JButton buttonImportWeight;
 
     public viewNetwork() {
         setTitle("Net Settings");
@@ -36,13 +34,24 @@ public class viewNetwork extends JFrame {
             }
         });
 
-        buttonImortModel.addActionListener(new ActionListener() {
+        buttonImortJason.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
                 if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 
-                    textFieldModelPath.setText(chooser.getSelectedFile().toString());
+                    textFieldJasonPath.setText(chooser.getSelectedFile().toString());
+                }
+            }
+        });
+
+        buttonImportWeight.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser chooser = new JFileChooser();
+                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+
+                    textFieldLoadWeights.setText(chooser.getSelectedFile().toString());
                 }
             }
         });
@@ -53,9 +62,9 @@ public class viewNetwork extends JFrame {
         return textFieldCsvPath.getText();
     }
 
-    public String getModelPath(){
-        return textFieldModelPath.getText();
-    }
+    public String getJSonPath(){ return textFieldJasonPath.getText(); }
+
+    public String getWeightsPath(){return textFieldLoadWeights.getText();}
 
 
     public static void main(String[] args) {
